@@ -1,14 +1,17 @@
 import React from "react"
 import { BrowserRouter, Route, Link } from "react-router-dom"
+
 import StreamList from "../stream-list"
 import StreamShow from "../stream-show"
 import StreamCreate from "../stream-create"
 import StreamDelete from "../stream-delete"
 import StreamEdit from "../stream-edit"
+import Header from "../header"
 
 const App = () => {
   return (
     <div>
+      <Header />
       <BrowserRouter>
         <div>
           <Route path="/" exact component={StreamList} />
