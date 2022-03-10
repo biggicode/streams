@@ -13,7 +13,6 @@ const App = () => {
     <div className="ui container">
       <BrowserRouter>
         <div>
-          {console.log(process.env.REACT_APP_CLIENT_ID)}
           <Header />
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" exact component={StreamCreate} />
