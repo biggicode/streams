@@ -8,6 +8,7 @@ import {
   FETCH_STREAM,
   FETCH_STREAMS,
 } from "../actions/types"
+import { formValues } from "redux-form"
 
 export const signIn = (userId) => {
   return {
@@ -40,8 +41,24 @@ export const fetchStreams = () => {
 
 export const fetchStream = (id) => {
   return async (dispatch) => {
-    const response = await streams.get(`/stream/:${id}`)
+    const response = await streams.get(`/stream/${id}`)
 
     dispatch({ type: FETCH_STREAM, payload: response.data })
+  }
+}
+
+export const deleteStream = (id) => {
+  return async (dispatch) => {
+    await streams.delete("/streams/${id}")
+
+    dispatch({ type: DELETE_STREAM, payload: id })
+  }
+}
+
+export const editStream = (id, formValues) => {
+  return async (dispatch) => {
+    const response = await streams.put(`/stream/${id}`, formValues)
+
+    dispatch({ type: EDIT_STREAM, payload: response.data })
   }
 }
