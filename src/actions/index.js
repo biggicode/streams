@@ -47,7 +47,7 @@ export const fetchStreams = () => {
 
 export const fetchStream = (id) => {
   return async (dispatch) => {
-    const response = await streams.get(`/stream/${id}`)
+    const response = await streams.get(`/streams/${id}`)
 
     dispatch({ type: FETCH_STREAM, payload: response.data })
   }
@@ -63,7 +63,7 @@ export const deleteStream = (id) => {
 
 export const editStream = (id, formValues) => {
   return async (dispatch) => {
-    const response = await streams.put(`/stream/${id}`, formValues)
+    const response = await streams.put(`/streams/${id}`, formValues)
 
     dispatch({ type: EDIT_STREAM, payload: response.data })
   }
