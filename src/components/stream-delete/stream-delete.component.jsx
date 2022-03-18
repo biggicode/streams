@@ -1,8 +1,14 @@
 import React from "react"
+import { connect } from "react-redux"
 import Modal from "../modal"
 import history from "../../history"
+import { fetchStream } from "../../actions"
 
 class StremDelete extends React.Component {
+  componentDidMount() {
+    this.props.fetchStream(this.props.match.params.id)
+  }
+
   renderActions() {
     return (
       <React.Fragment>
@@ -27,4 +33,4 @@ class StremDelete extends React.Component {
   }
 }
 
-export default StremDelete
+export default connect(null, { fetchStream })(StremDelete)
