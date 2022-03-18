@@ -9,8 +9,8 @@ const Modal = (props) => {
         className="ui standard modal visible active"
       >
         <div className="header">{props.title}</div>
-        <div class="content">{props.content}</div>
-        <div class="actions">{props.actions}</div>
+        <div className="content">{props.content}</div>
+        <div className="actions">{props.actions}</div>
       </div>
     </div>,
     document.querySelector("#modal")
